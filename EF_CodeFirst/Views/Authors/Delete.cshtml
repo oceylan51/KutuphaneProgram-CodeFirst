@@ -1,0 +1,31 @@
+@model Author
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="display-4">@Model.AuthorName @Model.AuthorSurname Delete Page</h1>
+
+<div class="m-0 container w-50 bg-danger mb-2">
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="AuthorName" class="text-warning mt-2 p-2 col-sm-4" style="font-size:17pt !important;"></label>
+        <label asp-for="AuthorName" class="text-dark p-2 mt-2 col-sm-4"
+            style="font-size:17pt !important;">@Model.AuthorName</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="AuthorSurname" class="text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="AuthorSurname" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.AuthorSurname</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="AuthorDateOfBirth" class="text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="AuthorDateOfBirth" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.AuthorDateOfBirth</label>
+    </div>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="AuthorId">
+    <input type="submit" class="btn btn-md btn-danger" value="Delete" />
+    <a asp-action="Index" class="display-5 ml-2" style="font-size: 17pt;">List To Back</a>
+
+</form>

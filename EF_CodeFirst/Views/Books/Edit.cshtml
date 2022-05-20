@@ -1,0 +1,70 @@
+@model Book
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 class="display-4 text-info"> Book Create Page</h1>
+
+<div class="container bg-warning w-100 m-0">
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col-6">
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class=" col-sm-5 text-center border border-warnings  text-danger mt-2 p-2"> Book
+                        Name:</label>
+                    <input type="text" asp-for="BookName" class="form-control ml-2 mt-2 w-50">
+                </div>
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                        Book Year Of Publication:</label>
+                    <input type="text" asp-for="BookYearOfPublication" class="form-control ml-2 mt-2 w-50">
+                </div>
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                        Book Edition Number:</label>
+                    <input type="text" asp-for="BookEditionNumber" class="form-control ml-2 mt-2 w-50">
+                </div>
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                        Book Number Of Pages:</label>
+                    <input type="text" asp-for="BookNumberOfPages" class="form-control ml-2 mt-2 w-50">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class=" col-sm-5 text-center border border-warnings  text-danger mt-2 p-2"> Book
+                        Quantity:</label>
+                    <input type="text" asp-for="BookQuantity" class="form-control ml-2 mt-2 w-50">
+                </div>
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                        Category Name:</label>
+                    <select asp-for="CategoryId" asp-items=@ViewBag.Categories
+                        class="form-control ml-2 mt-2 w-50"></select>
+                </div>
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                        Author Name:</label>
+                    <select asp-for="AuthorId" asp-items=@ViewBag.Authors class="form-control ml-2 mt-2 w-50"></select>
+                </div>
+                <div class=" form-group label-txtbox d-flex">
+                    <label style="font-weight: bold;"
+                        class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                        Publisher Name:</label>
+                    <select asp-for="PublisherId" asp-items=@ViewBag.Publishers
+                        class="form-control ml-2 mt-2 w-50"></select>
+                </div>
+            </div>
+        </div>
+        <div id="buttons" class=" form-group label-txtbox d-flex">
+            <input class="btn btn-lg mb-2 btn-outline-success" type="submit" value="Book Create">
+            <a asp-action="Index" class="display-5 ml-2" style="font-size: 20pt;">List To Back</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+@model Author
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 class="display-4 text-info"> @Model.AuthorName @Model.AuthorSurname Edit Page</h1>
+
+<div class="container bg-warning w-50 m-0">
+    <form asp-action="Edit">
+        <div class=" form-group label-txtbox d-flex">
+            <label style="font-weight: bold;"
+                class=" col-sm-5 text-center border border-warnings  text-danger mt-2 p-2"> Author
+                Name:</label>
+            <input type="text" asp-for="AuthorName" class="form-control ml-2 mt-2 w-50">
+        </div>
+        <div class=" form-group label-txtbox d-flex">
+            <label style="font-weight: bold;" class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                Author Surname:</label>
+            <input type="text" asp-for="AuthorSurname" class="form-control ml-2 mt-2 w-50">
+        </div>
+        <div class=" form-group label-txtbox d-flex">
+            <label style="font-weight: bold;" class="col-sm-5 text-center border border-warnings  text-danger mt-2 p-2">
+                Author Date Of Birth:</label>
+            <input type="text" asp-for="AuthorDateOfBirth" class="form-control ml-2 mt-2 w-50">
+        </div>
+        <div id="buttons" class=" form-group label-txtbox d-flex">
+            <input type="hidden" asp-for="AuthorId">
+            <input class="btn btn-md mb-2 btn-outline-success" type="submit" value="Save Changes">
+            <a asp-action="Index" class="display-5 ml-2" style="font-size: 17pt;">List To Back</a>
+        </div>
+    </form>
+</div>

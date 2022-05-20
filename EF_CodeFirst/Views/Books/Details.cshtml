@@ -1,0 +1,59 @@
+@model Book
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="display-4">@Model.BookName Details Page</h1>
+
+<div class="m-0 container w-100  bg-danger mb-2 rounded">
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="BookName" class="d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="BookName" class="text-dark p-2 mt-2 col-sm-4"
+            style="font-size:17pt !important;">@Model.BookName</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="BookYearOfPublication" class=" d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="BookYearOfPublication" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.BookYearOfPublication</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="BookEditionNumber" class=" d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="BookEditionNumber" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.BookEditionNumber</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="BookNumberOfPages" class="d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="BookNumberOfPages" class="text-dark p-2 mt-2 col-sm-4"
+            style="font-size:17pt !important;">@Model.BookNumberOfPages</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="BookQuantity" class=" d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;"></label>
+        <label asp-for="BookQuantity" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.BookQuantity</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="CategoryId" class=" d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;">Category Name</label>
+        <label asp-for="CategoryId" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.Category.CategoryName</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="AuthorId" class=" d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;">Author Name</label>
+        <label asp-for="AuthorId" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.Author.AuthorName</label>
+    </div>
+    <div class="d-flex w-100 justify-content-around">
+        <label asp-for="PublisherId" class=" d-flex align-items-center text-warning mt-2 p-2 col-sm-4"
+            style="font-size:17pt !important;">Publisher Name</label>
+        <label asp-for="PublisherId" class="text-capitalize text-dark p-2 mt-2 col-sm-4"
+            style="font-size: 17pt !important;">@Model.Publisher.PublisherName</label>
+    </div>
+</div>
+
+<a asp-action="Edit" class="btn btn-md btn-primary" asp-route-id=@Model.BookId>@Model.BookName</a>
+<a asp-action="Index" class="display-5 ml-2" style="font-size: 17pt;">List To Back</a>
